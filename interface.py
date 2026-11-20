@@ -327,10 +327,10 @@ class MemoryApp:
                 )
                 return
 
-            if not answer.isdigit():
+            if not answer.isdigit() or not answer.isdecimal():
                 messagebox.showwarning(
                     "Некорректный ввод",
-                    "Ответ должен содержать только цифры."
+                    "Ответ должен содержать только цифры от 0 до 9"
                 )
                 return
 
@@ -414,6 +414,14 @@ class MemoryApp:
 
     def show_results(self):
         """Отображение итоговых результатов"""
+
+        if self.test.attempts == 0:
+            messagebox.showinfo(
+                "Результаты",
+                "Вы ещё не проходили тестирование."
+            )
+            return
+
         try:
             statistics = self.test.get_statistics()
             result_text = format_results(statistics)
