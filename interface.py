@@ -198,14 +198,14 @@ class MemoryApp:
             self.content,
             text="Тестирование памяти",
             style="Title.TLabel"
-        ).pack(pady=10)
+        ).pack(pady=5)
 
         self.status_label = ttk.Label(
             self.content,
             text="",
             font=("Arial", 11)
         )
-        self.status_label.pack(pady=10)
+        self.status_label.pack(pady=5)
 
         self.sequence_label = ttk.Label(
             self.content,
@@ -213,14 +213,14 @@ class MemoryApp:
             font=("Arial", 32, "bold"),
             foreground="#2457A6"
         )
-        self.sequence_label.pack(pady=25)
+        self.sequence_label.pack(pady=12)
 
         self.instruction_label = ttk.Label(
             self.content,
             text="Запомните последовательность чисел",
             style="Subtitle.TLabel"
         )
-        self.instruction_label.pack(pady=10)
+        self.instruction_label.pack(pady=5)
 
         self.answer_entry = ttk.Entry(
             self.content,
@@ -228,7 +228,7 @@ class MemoryApp:
             justify="center",
             width=20
         )
-        self.answer_entry.pack(pady=15)
+        self.answer_entry.pack(pady=8)
         self.answer_entry.bind(
             "<Return>",
             lambda event: self.check_answer()
@@ -241,7 +241,7 @@ class MemoryApp:
             command=self.check_answer,
             width = 25
         )
-        self.check_button.pack(pady=(2,10))
+        self.check_button.pack(pady=5)
 
         self.next_button = ttk.Button(
             self.content,
@@ -253,7 +253,7 @@ class MemoryApp:
             self.content,
             text="В главное меню",
             command=self.show_main_menu
-        ).pack(pady=15)
+        ).pack(pady=8)
 
         self.update_status()
 
